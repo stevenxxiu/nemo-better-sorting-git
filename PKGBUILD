@@ -3,7 +3,7 @@
 
 pkgname=nemo
 pkgver=2.0.2
-pkgrel=1
+pkgrel=2
 pkgdesc="Cinnamon file manager (Nautilus fork)"
 arch=('i686' 'x86_64')
 url="https://github.com/linuxmint/nemo"
@@ -47,15 +47,4 @@ package() {
   cd linuxmint-nemo-*
 
   make DESTDIR="$pkgdir/" install
-
-  # Autostart only in Cinnamon to avoid conflict with GNOME Classic session
-  install -d "$pkgdir/etc/xdg/autostart/"
-  cp "$pkgdir/usr/share/applications/nemo-autostart.desktop" \
-    "$pkgdir/etc/xdg/autostart/nemo-autostart2d.desktop"
-  cp "$pkgdir/usr/share/applications/nemo-autostart.desktop" \
-    "$pkgdir/etc/xdg/autostart/nemo-autostart.desktop"
-  sed -i 's/^AutostartCondition=.*/AutostartCondition=GNOME3 if-session cinnamon/' \
-    "$pkgdir/etc/xdg/autostart/nemo-autostart.desktop"
-  sed -i 's/^AutostartCondition=.*/AutostartCondition=GNOME3 if-session cinnamon2d/' \
-    "$pkgdir/etc/xdg/autostart/nemo-autostart2d.desktop"
 }
