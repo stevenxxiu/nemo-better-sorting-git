@@ -19,25 +19,25 @@ sha512sums=('b951c401f93d04061a0ef0accc810ecc7f0487617f089960ab58886a6ca6ecd0af3
 b2sums=('365cd98a05c0c4aa1c86a3e7a565904852bd02d92ace8593043ae8a58f5b9d3eda71e8b0d329a177ed59c0d8f1330ae61f5bcc6671110e82bbd9baad84faa9f0')
 
 prepare() {
-    cd "${srcdir}"/${pkgname}-${pkgver}
+  cd "${srcdir}"/${pkgname}-${pkgver}
 
-    # Rename 'Files' app name to avoid having the same as nautilus
-    sed -i '/^\[Desktop Entry/,/^\[Desktop Action/ s/^Name\(.*\)=.*/Name\1=Nemo/' data/nemo.desktop.in
+  # Rename 'Files' app name to avoid having the same as nautilus
+  sed -i '/^\[Desktop Entry/,/^\[Desktop Action/ s/^Name\(.*\)=.*/Name\1=Nemo/' data/nemo.desktop.in
 }
 
 build() {
-    mkdir -p "${srcdir}"/${pkgname}-${pkgver}/build
-    cd "${srcdir}"/${pkgname}-${pkgver}/build
+  mkdir -p "${srcdir}"/${pkgname}-${pkgver}/build
+  cd "${srcdir}"/${pkgname}-${pkgver}/build
 
-    meson --prefix=/usr \
-          --libexecdir=lib/${pkgname} \
-          --buildtype=plain \
-          ..
-    samu
+  meson --prefix=/usr \
+        --libexecdir=lib/${pkgname} \
+        --buildtype=plain \
+        ..
+  samu
 }
 
 package() {
-    cd "${srcdir}"/${pkgname}-${pkgver}/build
+  cd "${srcdir}"/${pkgname}-${pkgver}/build
 
-    DESTDIR="${pkgdir}" samu install
+  DESTDIR="${pkgdir}" samu install
 }
