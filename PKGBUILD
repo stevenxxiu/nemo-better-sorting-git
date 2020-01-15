@@ -4,7 +4,7 @@
 # Contributor: Ner0
 
 pkgname=nemo-git-better-sorting
-pkgver=4.4.2.r3.g18ed0292
+pkgver=4.4.2.r4.g539150bc
 pkgrel=1
 pkgdesc="Cinnamon file manager (Nautilus fork)"
 arch=('x86_64')
