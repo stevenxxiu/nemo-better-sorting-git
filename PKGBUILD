@@ -4,7 +4,7 @@
 # Contributor: Ner0
 
 pkgname=nemo-better-sorting-git
-pkgver=4.4.2.r4.g539150bc
+pkgver=4.8.5.r3.gd5791897
 pkgrel=1
 pkgdesc="Cinnamon file manager (Nautilus fork)"
 arch=('x86_64')
@@ -32,8 +32,10 @@ prepare() {
   # Rename 'Files' app name to avoid having the same as nautilus
   sed -i '/^\[Desktop Entry/,/^\[Desktop Action/ s/^Name\(.*\)=.*/Name\1=Nemo/' data/nemo.desktop.in
 
-  # Patch to not sort hidden files specially, and to be the same as normal files
-  patch --forward --strip=1 --input="${srcdir}/../0001-nemo-file.c-sort-hidden-files-the-same-as-normal-fil.patch"
+  # Patches
+  patch --forward --strip=1 --input="${srcdir}/../0001-feat-sort-hidden-files-the-same-as-normal-files-so-w.patch"
+  patch --forward --strip=1 --input="${srcdir}/../0002-feat-use-g_utf8_collate_key-instead-of-g_utf8_collat.patch"
+  patch --forward --strip=1 --input="${srcdir}/../0003-feat-added-the-existing-window-flag-to-open-URLs-in-.patch"
 }
 
 build() {
