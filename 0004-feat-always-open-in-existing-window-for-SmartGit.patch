@@ -1,0 +1,25 @@
+From 7c50f2166277145b1d492a70cf4472fae2f0870b Mon Sep 17 00:00:00 2001
+From: Steven Xu <stevenxxiu@gmail.com>
+Date: Tue, 2 Mar 2021 21:24:28 +1100
+Subject: feat: always open in existing window for *SmartGit*
+
+---
+ src/nemo-main-application.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/nemo-main-application.c b/src/nemo-main-application.c
+index b96578b..2aef24d 100644
+--- a/src/nemo-main-application.c
++++ b/src/nemo-main-application.c
+@@ -510,7 +510,7 @@ nemo_main_application_open (GApplication *app,
+ 
+ 	gboolean open_in_tabs = FALSE;
+ 	gchar *geometry = NULL;
+-	gboolean open_in_existing_window = strcmp (options, "EXISTING_WINDOW") == 0;
++	gboolean open_in_existing_window = TRUE;
+ 	const char splitter = '=';
+ 
+ 	g_debug ("Open called on the GApplication instance; %d files", n_files);
+-- 
+2.30.1
+
