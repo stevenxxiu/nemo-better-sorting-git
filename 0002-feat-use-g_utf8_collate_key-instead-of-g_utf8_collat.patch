@@ -1,4 +1,4 @@
-From f4f65c004b7d8fde9e71ca9dc326fb327652e92c Mon Sep 17 00:00:00 2001
+From f4f98eb5cc9121de1b59f55c334d260e015ea37b Mon Sep 17 00:00:00 2001
 From: Steven Xu <stevenxxiu@gmail.com>
 Date: Tue, 2 Mar 2021 00:03:17 +1100
 Subject: feat: use `g_utf8_collate_key()` instead of
@@ -16,7 +16,7 @@ This still requires a custom locale that sorts `_` before numbers.
  1 file changed, 6 insertions(+), 1 deletion(-)
 
 diff --git a/libnemo-private/nemo-file.c b/libnemo-private/nemo-file.c
-index d41a10d..c1a999a 100644
+index eb23767..ea27bfa 100644
 --- a/libnemo-private/nemo-file.c
 +++ b/libnemo-private/nemo-file.c
 @@ -261,7 +261,12 @@ nemo_file_set_display_name (NemoFile *file,
@@ -34,5 +34,5 @@ index d41a10d..c1a999a 100644
  
  	if (g_strcmp0 (eel_ref_str_peek (file->details->edit_name), edit_name) != 0) {
 -- 
-2.30.1
+2.30.2
 
