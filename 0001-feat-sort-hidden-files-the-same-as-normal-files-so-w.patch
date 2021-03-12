@@ -1,4 +1,4 @@
-From 38d85be2b2beb5ae1ccaaed4918ad2908bb4c30a Mon Sep 17 00:00:00 2001
+From 9b5f786371310a7a2056a955bbb9c87c2a1dcc73 Mon Sep 17 00:00:00 2001
 From: Steven Xu <stevenxxiu@gmail.com>
 Date: Tue, 10 Dec 2019 10:45:13 +1100
 Subject: feat: sort hidden files the same as normal files, so we don't have
@@ -14,7 +14,7 @@ Content-Transfer-Encoding: 8bit
  1 file changed, 2 insertions(+), 14 deletions(-)
 
 diff --git a/libnemo-private/nemo-file.c b/libnemo-private/nemo-file.c
-index 6dcf043..d41a10d 100644
+index 89d4862..eb23767 100644
 --- a/libnemo-private/nemo-file.c
 +++ b/libnemo-private/nemo-file.c
 @@ -94,10 +94,6 @@
@@ -28,7 +28,7 @@ index 6dcf043..d41a10d 100644
  /* Name of Nemo trash directories */
  #define TRASH_DIRECTORY_NAME ".Trash"
  
-@@ -3036,20 +3032,12 @@ compare_by_display_name (NemoFile *file_1, NemoFile *file_2)
+@@ -3039,20 +3035,12 @@ compare_by_display_name (NemoFile *file_1, NemoFile *file_2)
  {
  	const char *name_1, *name_2;
  	const char *key_1, *key_2;
@@ -50,7 +50,7 @@ index 6dcf043..d41a10d 100644
          if (name_1 && !name_2)
              compare = +1;
          else if (!name_1 && name_2)
-@@ -4302,7 +4290,7 @@ nemo_file_should_show_thumbnail (NemoFile *file)
+@@ -4321,7 +4309,7 @@ nemo_file_should_show_thumbnail (NemoFile *file)
          /* file system says to never thumbnail anything */
  		return FALSE;
  	}
@@ -60,5 +60,5 @@ index 6dcf043..d41a10d 100644
  	if (file->details->thumbnail_path == NULL &&
  	    nemo_file_get_size (file) > cached_thumbnail_limit) {
 -- 
-2.30.1
+2.30.2
 

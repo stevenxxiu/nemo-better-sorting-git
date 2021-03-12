@@ -35,8 +35,7 @@ prepare() {
   # Patches
   patch --forward --strip=1 --input="${srcdir}/../0001-feat-sort-hidden-files-the-same-as-normal-files-so-w.patch"
   patch --forward --strip=1 --input="${srcdir}/../0002-feat-use-g_utf8_collate_key-instead-of-g_utf8_collat.patch"
-  patch --forward --strip=1 --input="${srcdir}/../0003-feat-added-the-existing-window-flag-to-open-URLs-in-.patch"
-  patch --forward --strip=1 --input="${srcdir}/../0004-feat-always-open-in-existing-window-for-SmartGit.patch"
+  patch --forward --strip=1 --input="${srcdir}/../0003-feat-always-open-in-existing-window-for-SmartGit.patch"
 }
 
 build() {
