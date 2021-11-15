@@ -3,7 +3,7 @@
 # Contributor: Alexandre Filgueira <alexfilgueira@cinnarch.com>
 # Contributor: Ner0
 
-pkgname=nemo-better-sorting-git
+pkgname=nemo-git
 pkgver=4.8.5.r3.gd5791897
 pkgrel=1
 pkgdesc="Cinnamon file manager (Nautilus fork)"
