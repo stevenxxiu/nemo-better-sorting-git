@@ -33,9 +33,9 @@ prepare() {
   sed -i '/^\[Desktop Entry/,/^\[Desktop Action/ s/^Name\(.*\)=.*/Name\1=Nemo/' data/nemo.desktop.in
 
   # Patches
-  patch --forward --strip=1 --input="${srcdir}/../0001-feat-sort-hidden-files-the-same-as-normal-files-so-w.patch"
-  patch --forward --strip=1 --input="${srcdir}/../0002-feat-use-g_utf8_collate_key-instead-of-g_utf8_collat.patch"
-  patch --forward --strip=1 --input="${srcdir}/../0003-feat-always-open-in-existing-window-for-SmartGit.patch"
+  patch --forward --strip=1 --input="${startdir}/0001-feat-sort-hidden-files-the-same-as-normal-files-so-w.patch"
+  patch --forward --strip=1 --input="${startdir}/0002-feat-use-g_utf8_collate_key-instead-of-g_utf8_collat.patch"
+  patch --forward --strip=1 --input="${startdir}/0003-feat-always-open-in-existing-window-for-SmartGit.patch"
 }
 
 build() {
