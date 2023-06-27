@@ -4,7 +4,7 @@
 # Contributor: Ner0
 
 pkgname=nemo
-pkgver=5.8.2
+pkgver=5.8.3
 pkgrel=1
 pkgdesc="Cinnamon file manager (Nautilus fork)"
 arch=(x86_64)
@@ -22,8 +22,8 @@ optdepends=('cinnamon-translations: i18n'
             'poppler: search helpers support for PDF')
 makedepends=(meson samurai gobject-introspection intltool libgsf)
 source=(${url}/archive/${pkgver}/${pkgname}-${pkgver}.tar.gz)
-sha512sums=('fb69acad59393c64e3ef2f5e3f0c2c219a2a58a500f2dfefacfed58ad194df7d082c5b37588f58c1fc668ea577c7b2cc795c5a3ad9fe69494cfbbddcbd0d1769')
-b2sums=('f494d910f47a3fc876e39b4389f00fd6770361f3d61334629e553b756d977dfc3e785bd0249d21c8b8d3ef12000e7cf769157618c3e0482408cb3c837195e5f0')
+sha512sums=('108049400bc440856a01d3ed263536d3e01055d3f2e6223a0ea5c3b86dc53af116eae07780cda602b6bc3fa4db6fe19614af8df651fd0b26729c134cdf7d63dd')
+b2sums=('31b641a561ac5c4c20153f8ce70e2afbae790038ee082ae4e246fdae03de64c6bb73a2895ed6bf7711129089f7e32baf26945003d75f0742697b6d752cb963d5')
 
 prepare() {
   cd ${pkgname}-${pkgver}
