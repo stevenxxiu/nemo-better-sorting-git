@@ -4,7 +4,7 @@
 # Contributor: Ner0
 
 pkgname=nemo-git
-pkgver=6.0.2.r19.gae1a5756
+pkgver=6.0.2.r27.g12b00c5d
 pkgrel=1
 pkgdesc="Cinnamon file manager (Nautilus fork)"
 arch=('x86_64')
@@ -30,7 +30,7 @@ prepare() {
   cd nemo
 
   # Rename 'Files' app name to avoid having the same as nautilus
-  sed -i '/^\[Desktop Entry/,/^\[Desktop Action/ s/^Name\(.*\)=.*/Name\1=Nemo/' data/org.Nemo.desktop.in
+  sed -i '/^\[Desktop Entry/,/^\[Desktop Action/ s/^Name\(.*\)=.*/Name\1=Nemo/' data/nemo.desktop.in
 
   # Patches
   patch --forward --strip=1 --input="${startdir}/0001-feat-sort-hidden-files-the-same-as-normal-files-so-w.patch"
