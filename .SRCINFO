@@ -1,12 +1,13 @@
 pkgbase = nemo-git
 	pkgdesc = Cinnamon file manager (Nautilus fork)
-	pkgver = 4.8.5.r3.gd5791897
+	pkgver = 6.2.0.r0.gf67bfd31
 	pkgrel = 1
 	url = https://github.com/linuxmint/nemo
 	arch = x86_64
 	license = GPL
 	makedepends = git
 	makedepends = meson
+	makedepends = glib2-devel
 	makedepends = gobject-introspection
 	makedepends = intltool
 	depends = cinnamon-desktop

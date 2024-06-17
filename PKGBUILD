@@ -4,7 +4,7 @@
 # Contributor: Ner0
 
 pkgname=nemo-git
-pkgver=6.0.2.r27.g12b00c5d
+pkgver=6.2.0.r0.gf67bfd31
 pkgrel=1
 pkgdesc="Cinnamon file manager (Nautilus fork)"
 arch=('x86_64')
@@ -15,7 +15,7 @@ depends=('cinnamon-desktop' 'dconf' 'gvfs' 'exempi' 'libexif' 'libnotify' 'libxm
          'python' 'xapps')
 optdepends=('cinnamon-translations: i18n'
             'ffmpegthumbnailer: support for video thumbnails')
-makedepends=('git' 'meson' 'gobject-introspection' 'intltool')
+makedepends=('git' 'meson' 'glib2-devel' 'gobject-introspection' 'intltool')
 conflicts=('nemo')
 provides=('nemo')
 source=("git+$url.git")
