@@ -1,6 +1,6 @@
 pkgbase = nemo
 	pkgdesc = Cinnamon file manager (Nautilus fork)
-	pkgver = 6.2.8
+	pkgver = 6.4.0
 	pkgrel = 1
 	url = https://github.com/linuxmint/nemo
 	arch = x86_64
@@ -28,8 +28,8 @@ pkgbase = nemo
 	optdepends = libreoffice: search helpers support for legacy MS Office powerpoint files
 	optdepends = odt2txt: search helpers support for LibreOffice files
 	optdepends = poppler: search helpers support for PDF
-	source = https://github.com/linuxmint/nemo/archive/6.2.8/nemo-6.2.8.tar.gz
-	sha512sums = cd943603cfb14cc9d50466872607d191a3af7ff61f05549407caa5d9dfe606e080d6eb40d17bbcdf3a9e810bcc493f3be087b1eac6c8272746cd72c9751822af
-	b2sums = fc74ab19e5aef65ba279f212f505cab91aa0dc92b19d31d4ae2f44b3222bd2278fbdf0df0bc36fa3973b91c9c06fab2c211b58c8d840deef5e60d5dbcbfa4dd7
+	source = https://github.com/linuxmint/nemo/archive/6.4.0/nemo-6.4.0.tar.gz
+	sha512sums = 030e555a26a41b384ade81343d0dc9b3f683f29f0b9c39f90de296fca062ede0dfe26b2371deafee475d48b14b61d57034293660d9ff642763f9820bc472d40e
+	b2sums = 9852412a44bc514ec82158cec5ddfcede9220c8637d2b54309253afc996e9cd86c869cfa4062d637dbb76df5a653389d9aa2b2bd6b802707b6d9d10d575f68c1
 
 pkgname = nemo
