@@ -4,7 +4,7 @@
 # Contributor: Ner0
 
 pkgname=nemo-git
-pkgver=6.2.0.r0.gf67bfd31
+pkgver=6.4.5.r0.g8d48119
 pkgrel=1
 pkgdesc="Cinnamon file manager (Nautilus fork)"
 arch=('x86_64')
@@ -23,7 +23,7 @@ sha512sums=('SKIP')
 
 pkgver() {
   cd nemo
-  git describe --long | sed 's/\([^-]*-g\)/r\1/;s/-/./g'
+  git describe --long --tags --abbrev=7 | sed 's/\([^-]*-g\)/r\1/;s/-/./g'
 }
 
 prepare() {
