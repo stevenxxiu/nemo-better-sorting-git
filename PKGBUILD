@@ -4,35 +4,68 @@
 # Contributor: Ner0
 
 pkgname=nemo
-pkgver=6.6.1
+pkgver=6.6.2
 pkgrel=1
-pkgdesc="Cinnamon file manager (Nautilus fork)"
+pkgdesc='File manager for Cinnamon (Nautilus fork)'
 arch=(x86_64)
-url="https://github.com/linuxmint/${pkgname}"
-license=(GPL)
-depends=(cinnamon-desktop dconf gvfs exempi libexif libnotify libxml2
-         python xapp)
-optdepends=('cinnamon-translations: i18n'
-            'ffmpegthumbnailer: support for video thumbnails'
-            'catdoc: search helpers support for legacy MS Office files'
-            'ghostscript: search helpers support for PostScript files'
-            'libgsf: search helpers support for MS Office files'
-            'libreoffice: search helpers support for legacy MS Office powerpoint files'
-            'odt2txt: search helpers support for LibreOffice files'
-            'poppler: search helpers support for PDF')
-makedepends=(git meson gobject-introspection intltool libgsf glib2-devel)
-source=(git+${url}#tag=$pkgver)
-sha512sums=('6da5994e817779ad84b8f30d25b87a18f4e9c23bd0d49c528d88269cca13c8e15a2889c625aaf7c8542e91f4ce23ec9d8ca30f925af94b401c12cda2e91acaeb')
-b2sums=('652e563d0efdd3144536044527e0f5469b2b68fca1670894ccc9039a4f6a62d8f67b7efb54b06106490a9bdc9abc4e35c1b583ad4dc69147efe930a3d5a58aef')
+url='https://github.com/linuxmint/nemo'
+license=('GPL-3.0-or-later AND LGPL-2.1-or-later')
+depends=(
+  at-spi2-core
+  bash
+  cairo
+  cinnamon-desktop
+  dconf
+  exempi
+  gcc-libs
+  gdk-pixbuf2
+  glib2
+  glibc
+  gtk3
+  gvfs
+  hicolor-icon-theme
+  json-glib
+  libexif
+  libx11
+  libxmlb
+  pango
+  python
+  python-cairo
+  python-gobject
+  xapp
+)
+optdepends=(
+  'catdoc: search helpers support for legacy MS Word files'
+  'cinnamon-translations: i18n'
+  'ffmpegthumbnailer: support for video thumbnails'
+  'ghostscript: search helpers support for PostScript files'
+  'libgsf: search helpers support for MS Office files'
+  'libreoffice: search helpers support for legacy MS PowerPoint files'
+  'poppler: search helpers support for PDF files'
+  'python-xlrd: search helpers support for legacy MS Excel files'
+)
+makedepends=(
+  git
+  glib2-devel
+  gobject-introspection
+  gtk-doc
+  intltool
+  libgsf
+  meson
+)
+source=("git+https://github.com/linuxmint/nemo.git#tag=$pkgver")
+b2sums=(175852456cdd845608ec994a34f2a419ff4d086db59f4a98b6c3aa5ab0ca89acacb66701861c35a35bda021ff1f0ee005798978f7b24d4a10e4cbe2b883505ea)
 
 prepare() {
-  cd ${pkgname}
+  cd $pkgname
   # Rename 'Files' app name to avoid having the same as nautilus
   sed -i '/^\[Desktop Entry/,/^\[Desktop Action/ s/^Name\(.*\)=.*/Name\1=Nemo/' data/nemo.desktop.in
 }
 
 build() {
-  arch-meson --libexecdir=lib/${pkgname} ${pkgname} build
+  arch-meson $pkgname build \
+    --libexecdir=lib/$pkgname \
+    -D gtk_doc=true
   meson compile -C build
 }
 
