@@ -5,7 +5,7 @@
 
 pkgname=nemo
 pkgver=6.6.2
-pkgrel=1
+pkgrel=2
 pkgdesc='File manager for Cinnamon (Nautilus fork)'
 arch=(x86_64)
 url='https://github.com/linuxmint/nemo'
@@ -55,12 +55,6 @@ makedepends=(
 )
 source=("git+https://github.com/linuxmint/nemo.git#tag=$pkgver")
 b2sums=(175852456cdd845608ec994a34f2a419ff4d086db59f4a98b6c3aa5ab0ca89acacb66701861c35a35bda021ff1f0ee005798978f7b24d4a10e4cbe2b883505ea)
-
-prepare() {
-  cd $pkgname
-  # Rename 'Files' app name to avoid having the same as nautilus
-  sed -i '/^\[Desktop Entry/,/^\[Desktop Action/ s/^Name\(.*\)=.*/Name\1=Nemo/' data/nemo.desktop.in
-}
 
 build() {
   arch-meson $pkgname build \
