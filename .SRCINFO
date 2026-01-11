@@ -1,7 +1,7 @@
 pkgbase = nemo
 	pkgdesc = File manager for Cinnamon (Nautilus fork)
-	pkgver = 6.6.2
-	pkgrel = 2
+	pkgver = 6.6.3
+	pkgrel = 1
 	url = https://github.com/linuxmint/nemo
 	arch = x86_64
 	license = GPL-3.0-or-later AND LGPL-2.1-or-later
@@ -42,7 +42,7 @@ pkgbase = nemo
 	optdepends = libreoffice: search helpers support for legacy MS PowerPoint files
 	optdepends = poppler: search helpers support for PDF files
 	optdepends = python-xlrd: search helpers support for legacy MS Excel files
-	source = git+https://github.com/linuxmint/nemo.git#tag=6.6.2
-	b2sums = 175852456cdd845608ec994a34f2a419ff4d086db59f4a98b6c3aa5ab0ca89acacb66701861c35a35bda021ff1f0ee005798978f7b24d4a10e4cbe2b883505ea
+	source = git+https://github.com/linuxmint/nemo.git#tag=6.6.3
+	b2sums = ced1a9421a4e37226ab9d1d828b4562be983a598b781c8d1af7891c5b7f9148316f2a5bdaf4427e3bcc923a79d832ee8bc85e7d10414dd2b965d3e0b517590a5
 
 pkgname = nemo
