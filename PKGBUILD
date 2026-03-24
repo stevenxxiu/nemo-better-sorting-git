@@ -65,6 +65,14 @@ pkgver() {
   git describe --tags --match="[0-9]*.[0-9]*.[0-9]*" | sed 's/\([^-]*-g\)/r\1/;s/-/./g'
 }
 
+prepare() {
+  cd $_pkgname
+
+  # Patches
+  patch --forward --strip=1 --input="${startdir}/0001-feat-sort-hidden-files-the-same-as-normal-files-so-w.patch"
+  patch --forward --strip=1 --input="${startdir}/0002-feat-use-g_utf8_collate_key-instead-of-g_utf8_collat.patch"
+}
+
 build() {
   arch-meson $_pkgname build \
     --libexecdir=lib/$_pkgname \
