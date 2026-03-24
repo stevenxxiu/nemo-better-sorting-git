@@ -1,6 +1,6 @@
-pkgbase = nemo
+pkgbase = nemo-git
 	pkgdesc = File manager for Cinnamon (Nautilus fork)
-	pkgver = 6.6.4
+	pkgver = 6.6.3.r22.g66d42992
 	pkgrel = 1
 	url = https://github.com/linuxmint/nemo
 	arch = x86_64
@@ -33,7 +33,7 @@ pkgbase = nemo
 	depends = python
 	depends = python-cairo
 	depends = python-gobject
-	depends = xapp
+	depends = xapps-git
 	optdepends = catdoc: search helpers support for legacy MS Word files
 	optdepends = cinnamon-translations: i18n
 	optdepends = ffmpegthumbnailer: support for video thumbnails
@@ -42,7 +42,9 @@ pkgbase = nemo
 	optdepends = libreoffice: search helpers support for legacy MS PowerPoint files
 	optdepends = poppler: search helpers support for PDF files
 	optdepends = python-xlrd: search helpers support for legacy MS Excel files
-	source = git+https://github.com/linuxmint/nemo.git#tag=6.6.4
-	b2sums = 14ebc3efe1a229180aad7e3d848116622e833263909a467b9810110171e167be8df7eb2999ffc3831671ff4dd90e43e47d4fac9238d554f549fe7d15c9f78457
+	provides = nemo
+	conflicts = nemo
+	source = git+https://github.com/linuxmint/nemo.git
+	b2sums = SKIP
 
-pkgname = nemo
+pkgname = nemo-git

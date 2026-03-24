@@ -1,10 +1,12 @@
+# Maintainer: Steven Xu <stevenxxiu@gmail.com>
 # Maintainer: Bruno Pagani <archange@archlinux.org>
 # Contributor: Eli Schwartz <eschwartz@archlinux.org>
 # Contributor: Alexandre Filgueira <alexfilgueira@cinnarch.com>
 # Contributor: Ner0
 
-pkgname=nemo
-pkgver=6.6.4
+_pkgname=nemo
+pkgname=${_pkgname}-git
+pkgver=6.6.3.r22.g66d42992
 pkgrel=1
 pkgdesc='File manager for Cinnamon (Nautilus fork)'
 arch=(x86_64)
@@ -32,7 +34,7 @@ depends=(
   python
   python-cairo
   python-gobject
-  xapp
+  xapps-git
 )
 optdepends=(
   'catdoc: search helpers support for legacy MS Word files'
@@ -53,12 +55,19 @@ makedepends=(
   libgsf
   meson
 )
-source=("git+https://github.com/linuxmint/nemo.git#tag=$pkgver")
-b2sums=('14ebc3efe1a229180aad7e3d848116622e833263909a467b9810110171e167be8df7eb2999ffc3831671ff4dd90e43e47d4fac9238d554f549fe7d15c9f78457')
+conflicts=('nemo')
+provides=('nemo')
+source=("git+$url.git")
+b2sums=('SKIP')
+
+pkgver() {
+  cd $_pkgname
+  git describe --tags --match="[0-9]*.[0-9]*.[0-9]*" | sed 's/\([^-]*-g\)/r\1/;s/-/./g'
+}
 
 build() {
-  arch-meson $pkgname build \
-    --libexecdir=lib/$pkgname \
+  arch-meson $_pkgname build \
+    --libexecdir=lib/$_pkgname \
     -D gtk_doc=true
   meson compile -C build
 }
